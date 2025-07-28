@@ -1,18 +1,18 @@
 export const tours = [
-  {
+    {
     id: 1,
-    title: "Himalayan Base Camp Trek",
+    title: "Kathmandu Cultural Odyssey",
     location: "Nepal",
-    duration: "14 days",
-    price: 2299,
-    rating: 4.9,
-    reviews: 342,
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
-    fallbackImage: "https://via.placeholder.com/800x600?text=Himalayan+Trek",
-    description: "Experience the ultimate adventure with our Himalayan Base Camp Trek. Journey through breathtaking landscapes, encounter local Sherpa culture, and witness some of the world's highest peaks.",
-    highlights: ["Professional mountain guides", "All meals included", "Camping equipment provided", "Cultural village visits"],
-    includes: ["Accommodation", "All meals", "Professional guide", "Transportation", "Permits"],
-    category: "Adventure"
+    duration: "7 days",
+    price: 1599,
+    rating: 4.8,
+    reviews: 213,
+    image: "https://i.pinimg.com/1200x/db/84/17/db8417d6c2c6b6eb211f4c75dd7c3c2c.jpg",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Kathmandu+Cultural",
+    description: "Immerse yourself in the vibrant culture of Kathmandu Valley. Visit ancient temples, explore bustling markets, and discover Nepal's rich heritage with expert guides.",
+    highlights: ["Swayambhunath Stupa", "Pashupatinath Temple", "Boudhanath Stupa", "Local artisan markets"],
+    includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Entry fees", "Transportation"],
+    category: "Cultural"
   },
   {
     id: 2,
@@ -29,20 +29,20 @@ export const tours = [
     includes: ["5-star resort stay", "All meals & drinks", "Water sports", "Spa access", "Airport transfers"],
     category: "Luxury"
   },
-  {
+    {
     id: 3,
-    title: "European Cultural Journey",
-    location: "Italy, France, Spain",
-    duration: "12 days",
-    price: 1899,
+    title: "Lumbini Spiritual Journey",
+    location: "Nepal",
+    duration: "5 days",
+    price: 1299,
     rating: 4.7,
-    reviews: 189,
-    image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&h=600&fit=crop",
-    fallbackImage: "https://via.placeholder.com/800x600?text=European+Journey",
-    description: "Discover the rich history and culture of Europe. Visit iconic landmarks, taste authentic cuisine, and immerse yourself in centuries of art and architecture.",
-    highlights: ["Expert local guides", "Museum skip-the-line tickets", "Authentic local dining", "Historic city centers"],
-    includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Transportation", "Entry tickets"],
-    category: "Cultural"
+    reviews: 192,
+    image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800&h=600&fit=crop",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Lumbini+Spiritual",
+    description: "Embark on a spiritual pilgrimage to Lumbini, the birthplace of Buddha. Explore sacred sites, meditate in serene monasteries, and connect with Nepal's spiritual heritage.",
+    highlights: ["Maya Devi Temple", "Ashokan Pillar", "Monastery visits", "Meditation sessions"],
+    includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Entry fees", "Transportation"],
+    category: "Spiritual"
   },
   {
     id: 4,
@@ -76,18 +76,18 @@ export const tours = [
   },
   {
     id: 6,
-    title: "Kathmandu Cultural Odyssey",
+    title: "Himalayan Base Camp Trek",
     location: "Nepal",
-    duration: "7 days",
-    price: 1599,
-    rating: 4.8,
-    reviews: 213,
-    image: "https://i.pinimg.com/1200x/db/84/17/db8417d6c2c6b6eb211f4c75dd7c3c2c.jpg",
-    fallbackImage: "https://via.placeholder.com/800x600?text=Kathmandu+Cultural",
-    description: "Immerse yourself in the vibrant culture of Kathmandu Valley. Visit ancient temples, explore bustling markets, and discover Nepal's rich heritage with expert guides.",
-    highlights: ["Swayambhunath Stupa", "Pashupatinath Temple", "Boudhanath Stupa", "Local artisan markets"],
-    includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Entry fees", "Transportation"],
-    category: "Cultural"
+    duration: "14 days",
+    price: 2299,
+    rating: 4.9,
+    reviews: 342,
+    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&h=600&fit=crop",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Himalayan+Trek",
+    description: "Experience the ultimate adventure with our Himalayan Base Camp Trek. Journey through breathtaking landscapes, encounter local Sherpa culture, and witness some of the world's highest peaks.",
+    highlights: ["Professional mountain guides", "All meals included", "Camping equipment provided", "Cultural village visits"],
+    includes: ["Accommodation", "All meals", "Professional guide", "Transportation", "Permits"],
+    category: "Adventure"
   },
   {
     id: 7,
@@ -106,17 +106,17 @@ export const tours = [
   },
   {
     id: 8,
-    title: "Lumbini Spiritual Journey",
-    location: "Nepal",
-    duration: "5 days",
-    price: 1299,
+    title: "European Cultural Journey",
+    location: "Italy, France, Spain",
+    duration: "12 days",
+    price: 1899,
     rating: 4.7,
-    reviews: 192,
-    image: "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800&h=600&fit=crop",
-    fallbackImage: "https://via.placeholder.com/800x600?text=Lumbini+Spiritual",
-    description: "Embark on a spiritual pilgrimage to Lumbini, the birthplace of Buddha. Explore sacred sites, meditate in serene monasteries, and connect with Nepal's spiritual heritage.",
-    highlights: ["Maya Devi Temple", "Ashokan Pillar", "Monastery visits", "Meditation sessions"],
-    includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Entry fees", "Transportation"],
-    category: "Spiritual"
-  }
+    reviews: 189,
+    image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&h=600&fit=crop",
+    fallbackImage: "https://via.placeholder.com/800x600?text=European+Journey",
+    description: "Discover the rich history and culture of Europe. Visit iconic landmarks, taste authentic cuisine, and immerse yourself in centuries of art and architecture.",
+    highlights: ["Expert local guides", "Museum skip-the-line tickets", "Authentic local dining", "Historic city centers"],
+    includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Transportation", "Entry tickets"],
+    category: "Cultural"
+  },
 ];

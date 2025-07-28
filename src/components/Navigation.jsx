@@ -1,24 +1,25 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { MapPin, Menu, X } from 'lucide-react';
+import { FaMapMarkerAlt, FaBars, FaTimes } from 'react-icons/fa';
 
 const Navigation = ({ currentPage, setCurrentPage, user, setUser, isMenuOpen, setIsMenuOpen }) => {
   useEffect(() => {
     AOS.init({
-      duration: 400,
+      duration: 600,
       once: true,
+      easing: 'ease-out',
     });
   }, []);
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <h1
-                className="text-2xl font-bold text-blue-600 cursor-pointer"
+                className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 cursor-pointer"
                 onClick={() => setCurrentPage('home')}
                 data-aos="fade-down"
               >
@@ -26,12 +27,16 @@ const Navigation = ({ currentPage, setCurrentPage, user, setUser, isMenuOpen, se
               </h1>
             </div>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="ml-10 flex items-center space-x-6">
                 {['home', 'tours', 'about', 'contact'].map((page) => (
                   <button
                     key={page}
                     onClick={() => setCurrentPage(page)}
-                    className={`px-3 py-2 text-sm font-medium ${currentPage === page ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 hover:text-blue-600'}`}
+                    className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+                      currentPage === page
+                        ? 'text-blue-600 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-100'
+                        : 'text-gray-600 hover:text-blue-600 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300'
+                    }`}
                     data-aos="fade-right"
                     data-aos-delay={100 * (['home', 'tours', 'about', 'contact'].indexOf(page) + 1)}
                   >
@@ -46,14 +51,14 @@ const Navigation = ({ currentPage, setCurrentPage, user, setUser, isMenuOpen, se
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => setCurrentPage('account')}
-                  className="text-gray-600 hover:text-blue-600"
+                  className="relative text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                   data-aos="fade-left"
                 >
                   My Account
                 </button>
                 <button
                   onClick={() => setUser(null)}
-                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                  className="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-lg font-medium hover:from-red-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 shadow-sm"
                   data-aos="fade-left"
                   data-aos-delay="100"
                 >
@@ -64,14 +69,14 @@ const Navigation = ({ currentPage, setCurrentPage, user, setUser, isMenuOpen, se
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => setCurrentPage('login')}
-                  className="text-gray-600 hover:text-blue-600"
+                  className="relative text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                   data-aos="fade-left"
                 >
                   Login
                 </button>
                 <button
                   onClick={() => setCurrentPage('signup')}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-sm"
                   data-aos="fade-left"
                   data-aos-delay="100"
                 >
@@ -81,66 +86,103 @@ const Navigation = ({ currentPage, setCurrentPage, user, setUser, isMenuOpen, se
             )}
           </div>
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg hover:bg-blue-100 transition-colors duration-200"
+            >
+              {isMenuOpen ? <FaTimes className="h-6 w-6 text-gray-600" /> : <FaBars className="h-6 w-6 text-gray-600" />}
             </button>
           </div>
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden" data-aos="fade-down">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-            {['home', 'tours', 'about', 'contact'].map((page) => (
+        <div
+          className="md:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <div
+            className="absolute top-0 right-0 w-3/4 max-w-xs bg-white shadow-xl h-full transform transition-transform duration-300 ease-in-out"
+            data-aos="slide-left"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-end p-4">
               <button
-                key={page}
-                onClick={() => { setCurrentPage(page); setIsMenuOpen(false); }}
-                className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600"
-                data-aos="fade-up"
-                data-aos-delay={100 * (['home', 'tours', 'about', 'contact'].indexOf(page) + 1)}
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 rounded-lg hover:bg-blue-100 transition-colors duration-200"
               >
-                {page.charAt(0).toUpperCase() + page.slice(1)}
+                <FaTimes className="h-6 w-6 text-gray-600" />
               </button>
-            ))}
-            {!user && (
-              <>
+            </div>
+            <div className="px-4 py-2 space-y-2">
+              {['home', 'tours', 'about', 'contact'].map((page) => (
                 <button
-                  onClick={() => { setCurrentPage('login'); setIsMenuOpen(false); }}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600"
+                  key={page}
+                  onClick={() => {
+                    setCurrentPage(page);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`block w-full text-left px-4 py-3 text-base font-medium ${
+                    currentPage === page ? 'text-blue-600 bg-blue-50' : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                  } rounded-lg transition-colors duration-200`}
                   data-aos="fade-up"
-                  data-aos-delay="500"
+                  data-aos-delay={100 * (['home', 'tours', 'about', 'contact'].indexOf(page) + 1)}
                 >
-                  Login
+                  {page.charAt(0).toUpperCase() + page.slice(1)}
                 </button>
-                <button
-                  onClick={() => { setCurrentPage('signup'); setIsMenuOpen(false); }}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600"
-                  data-aos="fade-up"
-                  data-aos-delay="600"
-                >
-                  Sign Up
-                </button>
-              </>
-            )}
-            {user && (
-              <>
-                <button
-                  onClick={() => { setCurrentPage('account'); setIsMenuOpen(false); }}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600"
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
-                  My Account
-                </button>
-                <button
-                  onClick={() => { setUser(null); setIsMenuOpen(false); }}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-blue-600"
-                  data-aos="fade-up"
-                  data-aos-delay="600"
-                >
-                  Logout
-                </button>
-              </>
-            )}
+              ))}
+              {!user && (
+                <>
+                  <button
+                    onClick={() => {
+                      setCurrentPage('login');
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                  >
+                    Login
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentPage('signup');
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
+                    Sign Up
+                  </button>
+                </>
+              )}
+              {user && (
+                <>
+                  <button
+                    onClick={() => {
+                      setCurrentPage('account');
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                  >
+                    My Account
+                  </button>
+                  <button
+                    onClick={() => {
+                      setUser(null);
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-left px-4 py-3 text-base font-medium text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
+                    Logout
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
