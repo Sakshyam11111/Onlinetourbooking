@@ -1,4 +1,4 @@
-**[View Live]([https://portfollionet.netlify.app/](https://onlinetourbooking-git-main-r3f-scroll-animations-s-projects.vercel.app/))**
+**[View Live](https://onlinetourbooking-git-main-r3f-scroll-animations-s-projects.vercel.app/)**
 
 
 # React + Vite
