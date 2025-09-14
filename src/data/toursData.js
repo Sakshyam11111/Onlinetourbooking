@@ -1,5 +1,5 @@
 export const tours = [
-    {
+  {
     id: 1,
     title: "Kathmandu Cultural Odyssey",
     location: "Nepal",
@@ -29,7 +29,7 @@ export const tours = [
     includes: ["5-star resort stay", "All meals & drinks", "Water sports", "Spa access", "Airport transfers"],
     category: "Luxury"
   },
-    {
+  {
     id: 3,
     title: "Lumbini Spiritual Journey",
     location: "Nepal",
@@ -118,5 +118,65 @@ export const tours = [
     highlights: ["Expert local guides", "Museum skip-the-line tickets", "Authentic local dining", "Historic city centers"],
     includes: ["4-star hotels", "Daily breakfast", "Guided tours", "Transportation", "Entry tickets"],
     category: "Cultural"
+  },
+  {
+    id: 9,
+    title: "Pokhara Lakes",
+    location: "Nepal, Pokhara",
+    duration: "4 days",
+    price: 999,
+    rating: 4.9,
+    reviews: 589,
+    image: "https://t4.ftcdn.net/jpg/02/93/00/71/240_F_293007175_ax5P4JMoRTOUy5MXEKtQ6en12bKxpaEF.jpg",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Pokhara+Lakes",
+    description: "Relax in the serene beauty of Pokhara, surrounded by tranquil lakes and majestic Himalayan views. Enjoy boating, nature walks, and the peaceful ambiance of this scenic destination.",
+    highlights: ["Phewa Lake boating", "Rupa and Begnas Lakes", "Sarangkot sunrise", "Local markets"],
+    includes: ["3-star hotels", "Daily breakfast", "Guided tours", "Boat rides", "Transportation"],
+    category: "Nature"
+  },
+  {
+    id: 10,
+    title: "Chitwan National Park",
+    location: "Nepal, Chitwan",
+    duration: "4 days",
+    price: 1099,
+    rating: 4.9,
+    reviews: 589,
+    image: "https://imgs.search.brave.com/t-tSXcabigYFRyH18ddEhzqgjpZ-77xqk-mfSB8OrVk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5ib29rbXVuZGku/Y29tL3RvdXIvZ3Jl/ZW4tcGFyay1jaGl0/d2FuLTQtZGF5cy0z/NDIyOTQtMTY0NDQ1/MzQzNS5qcGc_Zm9y/bWF0PWF1dG8mcXVh/bGl0eT03MCZ3aWR0/aD00ODA",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Chitwan+National+Park",
+    description: "Explore the wildlife-rich Chitwan National Park. Experience jungle safaris, spot rhinos and tigers, and learn about Nepal's biodiversity in this UNESCO World Heritage Site.",
+    highlights: ["Jungle safari", "Rhino and tiger spotting", "Bird watching", "Tharu cultural experience"],
+    includes: ["Jungle lodge accommodation", "All meals", "Guided safaris", "Park fees", "Transportation"],
+    category: "Wildlife"
+  },
+  {
+    id: 11,
+    title: "Inca Trail to Machu Picchu",
+    location: "Peru",
+    duration: "9 days",
+    price: 2499,
+    rating: 4.8,
+    reviews: 275,
+    image: "https://images.unsplash.com/photo-1503431128871-dff9a9d18848?w=800&h=600&fit=crop",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Machu+Picchu+Trek",
+    description: "Trek the iconic Inca Trail to the ancient ruins of Machu Picchu. Discover breathtaking Andean landscapes, explore historic Incan sites, and experience Peru's rich cultural heritage.",
+    highlights: ["Inca Trail trek", "Machu Picchu guided tour", "Andean mountain views", "Local Quechua culture"],
+    includes: ["Camping accommodation", "All meals", "Professional guide", "Permits", "Transportation"],
+    category: "Adventure"
+  },
+  {
+    id: 12,
+    title: "Santorini Luxury Escape",
+    location: "Greece",
+    duration: "6 days",
+    price: 3199,
+    rating: 4.9,
+    reviews: 320,
+    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop",
+    fallbackImage: "https://via.placeholder.com/800x600?text=Santorini+Escape",
+    description: "Indulge in the beauty of Santorini with its whitewashed villages, blue-domed churches, and stunning caldera views. Enjoy luxury accommodations and private island tours.",
+    highlights: ["Private caldera cruise", "Oia sunset views", "Wine tasting", "Luxury villa stay"],
+    includes: ["5-star hotel stay", "Daily breakfast", "Private tours", "Wine tasting", "Airport transfers"],
+    category: "Luxury"
   },
 ];
